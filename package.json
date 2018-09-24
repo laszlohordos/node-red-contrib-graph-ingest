@@ -1,0 +1,37 @@
+{
+  "author": {
+    "name": "Maxim Salnikov",
+    "email": "salnikov@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/webmaxru/node-red-contrib-graph-ingest/issues"
+  },
+  "dependencies": {
+  },
+  "description": "Node RED node for ForgeRock graph ingest",
+  "homepage": "https://github.com/webmaxru/node-red-contrib-graph-ingest#readme",
+  "keywords": [
+    "node-red",
+    "nodered",
+    "graph",
+    "ingest",
+    "forgerock"
+  ],
+  "license": "MIT",
+  "main": "graph-ingest.js",
+  "name": "node-red-contrib-graph-ingest",
+  "node-red": {
+    "nodes": {
+      "graph-ingest": "graph-ingest.js",
+      "graph-ingest-server": "graph-ingest-server.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webmaxru/node-red-contrib-graph-ingest.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
+}

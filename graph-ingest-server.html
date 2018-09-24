@@ -1,0 +1,62 @@
+<script type="text/javascript">
+  RED.nodes.registerType('graph-ingest-server', {
+    category: 'config',
+    defaults: {
+      name: { value: '' },
+      tokenEndpoint: { value: 'https://', required: true },
+      clientId: {value:"", required:true},
+      clientSecret: {value: "", required:true},
+      scope: {value: ""},
+      username: { value: '' },
+      password: { value: '' }
+    },
+    credentials: {
+      username: {type:"text"},
+      password: {type: "password"},
+      clientId: {type:"text"},
+      clientSecret: {type: "password"}
+    },
+    label: function () {
+      return this.name || this.url;
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="graph-ingest-server">
+    <div class="form-row">
+      <label for="node-config-input-name">
+        <i class="fa fa-tag"></i> <span>Name</span>
+      </label>
+      <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+      <label for="node-config-input-tokenEndpoint">
+        <i class="fa fa-tag"></i> <span>URL</span>
+      </label>
+      <input type="text" id="node-config-input-tokenEndpoint" placeholder="https://">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientId"><i class="icon-tag"></i>Client ID</label>
+        <input type="text" id="node-input-clientId" placeholder="">
+    </div>
+    <div class="form-row">
+        <label for="node-input-clientSecret"><i class="icon-tag"></i>Client Secret</label>
+        <input type="password" id="node-input-clientSecret" placeholder="">
+    </div>
+    <div class="form-row">
+      <label for="node-input-realm"><i class="icon-tag"></i>Scope (whitespace separated)</label>
+      <input type="text" id="node-input-realm" placeholder="scope1 scope2">
+    </div>
+    <div class="form-row">
+      <label for="node-config-input-username">
+        <i class="fa fa-tag"></i> <span>Username</span>
+      </label>
+      <input type="text" id="node-config-input-username" placeholder="">
+    </div>
+    <div class="form-row">
+      <label for="node-config-input-password">
+        <i class="fa fa-tag"></i> <span>Password</span>
+      </label>
+      <input type="password" id="node-config-input-password" placeholder="">
+    </div>
+  </script>
