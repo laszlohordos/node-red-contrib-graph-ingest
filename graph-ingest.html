@@ -1,14 +1,17 @@
 <script type="text/javascript">
     RED.nodes.registerType('graph-ingest',{
+        paletteLabel: 'Graph Ingest',
         category: 'ForgeRock',
         color: '#CCB2FF',
         defaults: {
             server: {value:"", type:"graph-ingest-server", required:true},
             name: {value:""},
-            policyName: {value: "", required:true}
+            policyName: {value: "", required:true},
+            dryRun: {value:false}
         },
         inputs:1,
         outputs:2,
+        outputLabels: ['Update','Error'],
         icon: "forgerock.png",
         label: function() {
             return this.name||this.policyName||'graph-ingest';
@@ -29,7 +32,10 @@
         <label for="node-input-policyName"><i class="icon-tag"></i>Policy Name</label>
         <input type="text" id="node-input-policyName" placeholder="Policy Name">
     </div>
-
+    <div class="form-row">
+        <label for="node-input-dryRun"><i class="icon-tag"></i><span data-i18n="dryRun"/></label>
+        <input type="checkbox" id="node-input-dryRun" style="display:inline-block; width:15px; vertical-align:baseline;">
+    </div>
 </script>
 
 <script type="text/x-red" data-help-name="graph-ingest">

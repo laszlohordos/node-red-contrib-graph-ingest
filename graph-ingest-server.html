@@ -1,14 +1,13 @@
 <script type="text/javascript">
   RED.nodes.registerType('graph-ingest-server', {
     category: 'config',
+    paletteLabel: 'Graph Ingest Server',
     defaults: {
       name: { value: '' },
       tokenEndpoint: { value: 'https://', required: true },
-      clientId: {value:"", required:true},
-      clientSecret: {value: "", required:true},
-      scope: {value: ""},
-      username: { value: '' },
-      password: { value: '' }
+      ingestEndpoint: { value: 'https://', required: true },
+      clusterName: { value: '', required: true },
+      scope: {value: "all"}
     },
     credentials: {
       username: {type:"text"},
@@ -30,22 +29,34 @@
       <input type="text" id="node-config-input-name" placeholder="Name">
     </div>
     <div class="form-row">
+      <label for="node-config-input-ingestEndpoint">
+        <i class="fa fa-tag"></i> <span>Ingest endpoint URL</span>
+      </label>
+      <input type="text" id="node-config-input-ingestEndpoint" placeholder="https://">
+    </div>
+    <div class="form-row">
+      <label for="node-config-input-clusterName">
+        <i class="fa fa-tag"></i> <span>Cluster Name</span>
+      </label>
+      <input type="text" id="node-config-input-clusterName" placeholder="">
+    </div>
+    <div class="form-row">
       <label for="node-config-input-tokenEndpoint">
-        <i class="fa fa-tag"></i> <span>URL</span>
+        <i class="fa fa-tag"></i> <span>OAuth2 Token endpoint URL</span>
       </label>
       <input type="text" id="node-config-input-tokenEndpoint" placeholder="https://">
     </div>
     <div class="form-row">
-        <label for="node-input-clientId"><i class="icon-tag"></i>Client ID</label>
-        <input type="text" id="node-input-clientId" placeholder="">
+        <label for="node-config-input-clientId"><i class="icon-tag"></i>Client ID</label>
+        <input type="text" id="node-config-input-clientId" placeholder="">
     </div>
     <div class="form-row">
-        <label for="node-input-clientSecret"><i class="icon-tag"></i>Client Secret</label>
-        <input type="password" id="node-input-clientSecret" placeholder="">
+        <label for="node-config-input-clientSecret"><i class="icon-tag"></i>Client Secret</label>
+        <input type="password" id="node-config-input-clientSecret" placeholder="">
     </div>
     <div class="form-row">
-      <label for="node-input-realm"><i class="icon-tag"></i>Scope (whitespace separated)</label>
-      <input type="text" id="node-input-realm" placeholder="scope1 scope2">
+      <label for="node-config-input-scope"><i class="icon-tag"></i>Scope (whitespace separated)</label>
+      <input type="text" id="node-config-input-scope" placeholder="all update">
     </div>
     <div class="form-row">
       <label for="node-config-input-username">

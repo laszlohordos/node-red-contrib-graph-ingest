@@ -7,6 +7,15 @@
     "url": "https://github.com/webmaxru/node-red-contrib-graph-ingest/issues"
   },
   "dependencies": {
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "mocha": "~5.2.0",
+    "node-red": "^0.19.4",
+    "node-red-node-test-helper": "^0.1.8",
+    "js-beautify": "^1.8.7",
+    "deep-diff": "^1.0.2"
   },
   "description": "Node RED node for ForgeRock graph ingest",
   "homepage": "https://github.com/webmaxru/node-red-contrib-graph-ingest#readme",
@@ -31,7 +40,8 @@
     "url": "git+https://github.com/webmaxru/node-red-contrib-graph-ingest.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/**/*_spec.js",
+    "fmt": "js-beautify -n --config crockford.jscsrc -r *.js test/*.js"
   },
   "version": "0.1.0"
 }
